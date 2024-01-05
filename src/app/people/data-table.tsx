@@ -169,6 +169,14 @@ export function PeopleDataTable<TData, TValue>({
       {/* pagination */}
       <div className="flex items-center justify-start space-x-2 py-4">
         <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.setPageIndex(0)}
+            disabled={!table.getCanPreviousPage()}
+          >
+          First Page
+        </Button>
+        <Button
           variant="outline"
           size="sm"
           onClick={() => table.previousPage()}
@@ -185,6 +193,14 @@ export function PeopleDataTable<TData, TValue>({
         >
           {" "}
           Next
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.setPageIndex(table.getPageCount()-1)}
+          disabled={!table.getCanNextPage()}
+        >
+          Last Page
         </Button>
       </div>
       {/* numbers of selections */}

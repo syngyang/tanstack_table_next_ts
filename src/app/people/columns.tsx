@@ -56,13 +56,17 @@ export const columns: ColumnDef<Person>[] = [
     },
     accessorKey: "id",
   },
+  // {
+  //   header: "First Name",
+  //   accessorKey: "first_name",
+  // },
+  // {
+  //   header: "Last Name",
+  //   accessorKey: "last_name",
+  // },
   {
-    header: "First Name",
-    accessorKey: "first_name",
-  },
-  {
-    header: "Last Name",
-    accessorKey: "last_name",
+    header:'Name',
+    accessorFn: row => `${row.first_name} ${row.last_name}`,
   },
   {
     header: "Email",
